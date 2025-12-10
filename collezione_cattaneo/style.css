@@ -1,0 +1,537 @@
+/*
+@font-face {
+    font-family: 'Gotham-Bold';
+    src: url('content/UI/fonts/GothamBold.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Gotham-BoldItalic';
+    src: url('content/UI/fonts/GothamBoldItalic.ttf') format('truetype');
+  }
+@
+  @font-face {
+    font-family: 'Gotham-Book';
+    src: url('content/UI/fonts/GothamBook.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Gotham-BookItalic';
+    src: url('content/UI/fonts/GothamBookItalic.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: "ArnoPro-Italic";
+    src: url('content/UI/fonts/ArnoPro-Italic.ttf') format('truetype');
+  }
+
+   */
+
+  @font-face {
+    font-family: "Montserrat-Regular";
+    src: url('content/fonts/Montserrat/Montserrat-Regular.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: "Montserrat-Bold";
+    src: url('content/fonts/Montserrat/Montserrat-Bold.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: "Montserrat-italic";
+    src: url('content/fonts/Montserrat/Montserrat-Italic.ttf') format('truetype');
+  }
+
+
+
+  body
+  {
+    font-family: 'Montserrat-Regular';
+  }
+
+   
+   #SideBAR
+   {
+    position: absolute;
+    /*left: 25px;*/
+    left:0px;
+    min-height: 100px;
+    min-width: 100px;
+    max-width: 33%;
+    color: white;
+   /* height: 100%;*/
+    padding: 10px;
+    display: none;
+    z-index: 111;
+
+   }
+
+   .btnHeader
+   {
+    padding: 10px;
+    height: 50px;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    column-gap: 10px;
+    cursor: pointer;
+    background-color: var(--color-dark-gray-semitrasp);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    margin-bottom: 10px;
+   }
+
+   #backBtn
+   {
+    background-image: url("content/icons/backBtn.svg");
+    background-size:contain;
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 30px;
+   }
+
+  #homeBtn
+  {
+    background-image: url("content/icons/homeBtn.svg");
+    background-size:contain;
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 30px;
+  }
+
+  .bottomToolBar{
+    padding: 20px;
+    text-align: center;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    background-color: var(--color-dark-gray-semitrasp);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    margin-bottom: 10px;
+    position: absolute;
+    bottom: 10px;
+    width: fit-content;
+    transform: translateX(-50%);
+    left: 50%;
+    z-index: 111;
+  }
+    
+/*Audio Control Style*/
+
+/* Il titolo sopra o accanto */
+#audioControlsTitle {
+  color: #fff;
+  white-space: nowrap;     /* impedisce l'andata a capo */
+  overflow: hidden;        /* evita overflow se troppo lungo */
+  text-overflow: ellipsis; /* aggiunge "…" se sfora */
+  display: inline-block;   /* consente width automatico */
+  max-width: 300px;        /* limite massimo di sicurezza */
+}
+
+
+/* Rimuove lo sfondo del pannello audio */
+#mainAudioControls::-webkit-media-controls-panel {
+  background: transparent !important;
+}
+
+/* Rimuove la cornice / bordo */
+#mainAudioControls::-webkit-media-controls-enclosure {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Rende bianchi tutti i controlli visibili */
+#mainAudioControls::-webkit-media-controls-play-button,
+#mainAudioControls::-webkit-media-controls-mute-button,
+#mainAudioControls::-webkit-media-controls-volume-slider,
+#mainAudioControls::-webkit-media-controls-timeline,
+#mainAudioControls::-webkit-media-controls-current-time-display,
+#mainAudioControls::-webkit-media-controls-time-remaining-display {
+  filter: invert(1) brightness(2); /* bianco brillante */
+}
+
+/* Facoltativo: sistema dimensione e margini */
+#mainAudioControls {
+  width: 260px;
+  height: 32px;
+  background: transparent;
+  border: none;
+}
+
+
+
+   .moreBtn
+   {
+    background-image: url("content/icons/moreBtn.svg");
+    background-size:contain;
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 30px;
+   }
+
+   .rightAlign
+   {
+    text-align:right;
+    text-align: -webkit-right;
+   }
+
+   #InfoScrollContainer
+   {
+/*  overflow-y: scroll;*/
+    overflow-x: hidden;
+
+   /* height: calc( 100% - 50px - 10px - 50px );*/
+    background-color: var(--color-dark-gray-semitrasp);
+    border: 20px;
+    padding: 30px;
+    backdrop-filter: blur(10px);
+    border-radius: 30px; 
+   }
+
+   .Block
+   {
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #1e1e1ecc;
+    line-height: 1.6;
+    margin-bottom: 20px;
+   }
+
+
+   span.b
+   {
+    font-family: "Montserrat-Bold"!important;
+   }
+
+   b { font-family: "Montserrat-Bold"!important;}
+
+   span.i
+   {
+    font-family: "Montserrat-Italic"!important;
+   }
+
+   .flexContainer
+   {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+   }
+   
+   .myCircle
+   {
+    height: 15px;
+    width: 15px;
+    border-radius: 15px;
+    background-color: white;
+   }
+
+   .thumb
+   {
+    height: 45px;
+    width: 45px;
+    border-radius: 25px;
+    background-color: white;
+    background-image:url("content/icons/catalogo.jpeg");
+    background-position:center;
+    background-size: cover;
+   }
+
+   .line
+   {
+    width: 80%;
+    height: 1px;
+    background-color: white;
+    margin-top: 5px;
+    margin-bottom: 5px;
+   }
+
+   .CarouselContainer
+   {
+
+   }
+   .carouselItem
+   {
+    width: 33%;
+    height: 250px;
+    background-color: grey;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+   }
+
+   .carouselItem.quadro1
+   {
+    background-image: url("content/image/ritratto/ritratto1.jpg");
+   }
+   .carouselItem.quadro2
+   {
+    background-image: url("content/image/ritratto/ritratto2.jpg");
+   }
+   .carouselItem.quadro3
+   {
+    background-image: url("content/image/ritratto/ritratto3.jpg");
+   }
+
+   .carouselItem.cospi1
+   {
+    background-image: url("content/image/codicecospi/codicecospi1.jpeg");
+   }
+
+   .carouselItem.cospi2
+   {
+    background-image: url("content/image/codicecospi/codicecospi2.jpg");
+   }
+
+   .carouselItem.cospi3
+   {
+    background-image: url("content/image/codicecospi/codicecospi3.jpeg");
+   }
+
+   .carouselItem.cospi4
+   {
+    background-image: url("content/image/codicecospi/codicecospi4.jpeg");
+   }
+
+
+.IIFBtn
+{
+  height: 65px;
+  width: auto;
+  cursor: pointer;
+}
+
+.IIIFContainer
+{
+  justify-content: space-between!important;
+}
+
+.InfoContainer h1
+{
+  font-family: 'Montserrat-Bold';
+  font-size: 40px;
+}
+
+.InfoContainer h1
+{
+  font-family: 'Montserrat-Bold';
+  font-size: 25px;
+}
+
+.WhiteBlock
+{
+  border-style: solid;
+  border-color: white;
+  border-width: 2px;
+}
+
+.underline
+{
+  text-decoration:underline;
+}
+
+.VideoOperaItem
+{
+  background-color: white;
+  background-image: url("content/image/videoImage.jpg");
+  width: 100px;
+  height: 100px;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#miradorFullscreenContainer{
+
+  background-color: rgba(48, 48, 48, 0.9);
+  position:  absolute;
+  left: 0px;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+  display: none;
+  z-index: 12;
+}
+
+#miradorViewer
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-height: 80vh;
+  min-width: 80vw;
+  padding: 10px;
+  border-radius: 3px;
+  color: white;
+}
+
+:root{
+  --duration: 0.15s;
+  }
+
+#blurredFullscreen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /*background-color: rgba(186, 186, 186, 0.662);*/
+  backdrop-filter: blur(30px);
+  z-index: 4;
+
+  /* Start hidden */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--duration) ease-in-out, visibility var(--duration) ease-in-out;
+}
+
+/* Class to show with fade-in */
+.show-blur {
+  opacity: 1!important;
+  visibility: visible!important;
+}
+
+
+#welcomePopupContainer
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #130910;
+  font-family: "Montserrat-Regular";
+  font-size: 20px;
+  backdrop-filter: blur(30px);
+  transition: all 4s;
+}
+
+#welcomePopupContainer.isSemiTransparent{
+  background-color: transparent;
+}
+
+.startBtnsContainer{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+}
+
+#welcomePopup
+{
+  background-color:#c1793a;
+  border-radius: 20px;
+  text-align: center;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 30px;
+  transform: translate(-50%, -50%);
+  
+}
+
+/* Style for popup close button (optional) */ 
+#closePopupBtn { 
+  cursor: pointer;
+  padding: 10px 20px; 
+  background-color: white !important;
+  color: #ba6a7b !important;
+}
+
+
+#VideoPlayer
+{
+  position: absolute;
+  z-index: 10;
+  display: none;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  /*top: 50%;
+  left: calc( 30% + 50px);
+  transform: translateY(-50%);*/
+
+}
+
+
+#helpertoolbox
+{
+  background-color: red;
+  padding: 5px;
+  display:flex;
+}
+
+/*FONTS:*/
+@font-face {
+  font-family: "Work Sans";
+  src: url('content/fonts/Work_Sans/WorkSans-VariableFont_wght.ttf') format('truetype');
+}
+@font-face {
+  font-family: "PT Serif";
+  src: url('content/fonts/PT_Serif/PTSerif-Regular.ttf') format('truetype');
+}
+
+
+/*NEW STYLE FOR SIDE BAR:*/
+
+/* Variables for colours, fonts and spacing */
+:root {
+  --color-dark-gray: #1E1E1E;
+  /* Main background colour */
+
+  /*Added transparent*/
+  --color-dark-gray-semitrasp: #1e1e1ebd;
+
+  --color-creme: #FFF8F0;
+  /* Primary colour for text */
+  --color-terracotta: #E2725B;
+  /* Emphasis colour */
+
+  /* Fonts, to be addedd */
+  --font-primary: 'Work Sans', sans-serif;
+  --font-secondary: 'PT Serif', serif;
+
+  /* General spacing */
+  --section-spacing: 24px;
+  --subsection-spacing: 16px;
+}
+
+/* Main sidebar container */
+#SideBAR {
+ /* width: 30%;
+  background-color: var(--color-dark-gray);*/
+  color: var(--color-creme);
+  font-family: var(--font-primary);
+}
+
+/* Scrollable container */
+#InfoScrollContainer {
+  overflow-y: auto;
+  max-height: calc(100vh - 100px);
+  padding: 25px;
+}
+
+
+/*-------REDUNDANT-------TO DELETE FROM HERE*/
+
+/*-------REDUNDANT-------TO DELETE UNTIL HERE*/
+
+/* App modal styles (default hidden) */
+.app-modal{display:none;position:fixed;inset:0;align-items:center;justify-content:center;z-index:99999}
+.app-modal.show{display:flex}
+.app-modal-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.6)}
+.app-modal-dialog{position:relative;background:#0f0f10;color:#fff;border-radius:10px;box-shadow:0 20px 50px rgba(0,0,0,0.6);max-height:90vh;overflow:auto;width: 80vw}
+.app-modal-header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid rgba(255,255,255,0.04);font-weight:600}
+.app-modal-title{font-size:18px}
+.app-modal-close{background:transparent;border:0;color:inherit;font-size:22px;cursor:pointer}
+.app-modal-body{padding:16px;color:#ddd}
+.app-modal-footer{padding:10px 16px;border-top:1px solid rgba(255,255,255,0.04);text-align:right}
+
+/* small responsive tweak */
+@media (max-width:640px){
+  .app-modal-dialog{width:94%;max-height:86vh}
+}

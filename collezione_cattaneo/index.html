@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" href="appicon.png" sizes="512x512" type="image/png">
+
+    <!-- Add iOS meta tags and icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="__APPTITLE__">
+    <link rel="apple-touch-icon" href="appicon.png">
+
+    <!-- OpenGraph tags -->
+    <meta property="og:title" content="__APPTITLE__" />
+    <meta property="og:description" content="__APPDESC__" />
+    <meta property="og:image" content="appicon.png" />
+	<meta property="og:image:secure_url" content="appicon.png" />
+	<meta property="og:image:type" content="image/png" />
+	<meta property="og:image:width" content="200" />
+	<meta property="og:image:height" content="200" />
+
+	<!-- PWA manifest -->
+	<link rel="manifest" href="app.webmanifest">
+
+	<!-- Web-app ID -->
+	<meta name="aton:appid" content="aldrovandi">
+
+	<meta name="title" content="__APPTITLE__">
+	<meta name="description" content="__APPDESC__">
+
+    <!-- Add meta theme-color -->
+    <meta name="theme-color" content="#000000" />
+
+    <title>TEST Aldrovandi</title>
+    <link rel="stylesheet" type="text/css" href="/res/css/aton.css">
+
+    <!-- Vendors -->
+    <script type="text/javascript" src="/vendors/vendors.min.js"></script>
+    <script type="text/javascript" src="/dist/THREE.bundle.js"></script>
+    <script type="text/javascript" src="/dist/ATON.min.js"></script>
+    
+    <!-- Main js entry -->
+    <!-- Jquery-csv<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.21/jquery.csv.min.js" integrity="sha512-Y8iWYJDo6HiTo5xtml1g4QqHtl/PO1w+dmUpQfQSOTqKNsMhExfyPN2ncNAe9JuJUSKzwK/b6oaNPop4MXzkwg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+ 	-->
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/suiBuilder.js"></script>
+    <script type="text/javascript" src="js/helper.js"></script>
+    <!-- Melody utils -->
+    <script type="text/javascript" src="melody/melody_utils.js"></script>
+    
+    <script type="modules" src="js/uitoolkit.js"></script>
+    
+    <!-- MIND js ADDON -->
+    <script type="text/javascript" src="js/mind/src/MIND.js"></script>
+    <script type="text/javascript" src="js/mind/aldrovandiMind.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/mind/mind.css">
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!--MIRADOR-->
+    <script src="https://unpkg.com/mirador@latest/dist/mirador.min.js"></script>
+    
+
+</head>
+
+<body onload="APP.getVRBtn()" oncontextmenu="return false;">
+
+    
+  
+     <!--Main AUDIO
+    <audio id="introAudio">
+        <source src="content/audios/Audio_Sala1.mp3" type="audio/mpeg">
+      </audio>-->
+
+      <!--MIND AUDIO
+      <audio id="A_ita">
+        <source src="content/audios/experiment/conn_ita.mp3" type="audio/mpeg">
+      </audio>
+
+      <audio id="B_ita">
+        <source src="content/audios/experiment/den_ita.mp3" type="audio/mpeg">
+      </audio>
+
+      <audio id="A_eng">
+        <source src="content/audios/experiment/conn_eng.mp3" type="audio/mpeg">
+      </audio>
+
+      <audio id="B_eng">
+        <source src="content/audios/experiment/den_eng.mp3" type="audio/mpeg">
+      </audio>
+      
+      END MIND AUDIO-->
+
+
+      
+    <div id="idTopToolbar" class="atonToolbar atonToolbar-top"></div>
+
+        <!-- Loader -->
+        <div id="idLoader" class="atonCenterLoader" style="display:none;"></div>
+        
+    <video id="VideoPlayer" height="70%" controls>
+      </video>
+
+    <div></div>
+
+
+    <div id="welcomePopupContainer">
+        <div id="welcomePopup">
+            <h2><span class="b">3D VIRTUAL MUSEUM</span> <br> <span class="i">of "Luigi Cattaneo" Anatomical Wax Collection</span></h2>
+            <p>Premi "Inizia" ed esplora la collezione</p>
+            <div class="startBtnsContainer">
+            <div id="closePopupBtn" class="atonBTN" title="closePopupBtn" onclick="APP.startAPP('ita')">
+              <img src="./js/lan/ita.png">  <span class="b">Inizia</span>  </div>
+            <div id="closePopupBtn" class="atonBTN" title="closePopupBtn" onclick="APP.startAPP('eng')">
+             <img src="./js/lan/eng.png"> <span class="b">Start</span>    </div>
+          </div>
+
+        </div>
+    </div>
+
+    <!--BLURRED FULLSCREEN-->
+    <div id="blurredFullscreen"></div>
+    <!--MIRADOR CONTAINER-->
+    <div id="miradorFullscreenContainer">
+      <div id="miradorViewer"></div> 
+    </div>
+  
+    <!--SIDEBAR-->
+  <div id="SideBAR">
+
+    <!--HEADERS-->
+        <div onclick="APP.CloseObject()" class="btnHeader" id="backBtnHeader">            
+           <p id="backToExhibition_Text">TORNA ALLA COLLEZIONE</p>
+           <div  id="backBtn"></div>
+        </div>
+
+        <div class="btnHeader"  onclick="APP.BackToStart()" id="HomeBtnHeader">            
+          <div id="homeBtn"></div>
+          <p id="backToStart_Text">ESPLORA DALL'INIZIO</p>
+        </div>
+    <!--END HEADERS-->
+        <div id="InfoScrollContainer">
+            <div id="InfoContainer"></div>
+        </div>
+  </div>
+    
+    <!--BOTTOM BAR-->
+    <div class="bottomToolBar" id="BottomBar">
+      <div id="audioControlsTitle"></div>
+        <audio id="mainAudioControls" controls controlsList="nodownload noplaybackrate">
+        Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <!-- Top Toolbar -->
+    <div id="idTopToolbar" class="atonToolbar atonToolbar-top-left"></div>
+
+	<!-- Bottom Toolbar -->
+	<div id="idBottomToolbar" class="atonToolbar atonToolbar-bottom"></div>
+
+    <!-- Main Popup -->
+    <div id="idPopup" class="atonPopupContainer" style="display:none;"></div>
+
+    <!-- App Modal (injected/controlled by APP.showModal / APP.closeModal) -->
+    <div id="appModal" class="app-modal" aria-hidden="true">
+        <div class="app-modal-overlay" data-role="overlay"></div>
+        <div class="app-modal-dialog" role="document">
+            <header class="app-modal-header">
+                <div class="app-modal-title"></div>
+                <button class="app-modal-close" aria-label="Close" onclick="APP.closeModal()">&times;</button>
+            </header>
+            <div class="app-modal-body"></div>
+            <footer class="app-modal-footer"></footer>
+        </div>
+    </div>
+
+    <!-- Powered by -->
+    <div id='idPoweredBy' class="atonToolbar atonToolbar-bottom poweredBy" >
+        Powered by <a href="https://osiris.itabc.cnr.it/aton/" target="_blank">ATON</a>
+    </div>
+</body>
